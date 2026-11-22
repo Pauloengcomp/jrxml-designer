@@ -1,0 +1,27 @@
+{
+  "name": "jrxml-band-designer",
+  "displayName": "Designer JRXML",
+  "description": "Designer visual de relatórios JRXML: bandas, inspector, paleta e propriedades",
+  "version": "0.2.0",
+  "publisher": "alphacare-local",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "main": "./extension.js",
+  "files": ["extension.js", "media/**"],
+  "activationEvents": [],
+  "contributes": {
+    "customEditors": [{ "viewType": "jrxmlDesigner.editor", "displayName": "Designer JRXML", "selector": [{ "filenamePattern": "*.jrxml" }], "priority": "option" }],
+    "commands": [
+      { "command": "jrxmlDesigner.open", "title": "Abrir no Designer JRXML", "icon": "$(layout)" },
+      { "command": "jrxmlDesigner.xml", "title": "Ver XML do relatório", "icon": "$(code)" }
+    ],
+    "menus": {
+      "editor/title": [
+        { "command": "jrxmlDesigner.open", "when": "resourceExtname == .jrxml && activeCustomEditorId != 'jrxmlDesigner.editor'", "group": "navigation@0" },
+        { "command": "jrxmlDesigner.xml", "when": "activeCustomEditorId == 'jrxmlDesigner.editor'", "group": "navigation@0" }
+      ],
+      "explorer/context": [{ "command": "jrxmlDesigner.open", "when": "resourceExtname == .jrxml", "group": "navigation@1" }]
+    }
+  }
+}
