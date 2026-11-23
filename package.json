@@ -5,6 +5,7 @@
   "version": "0.2.0",
   "publisher": "alphacare-local",
   "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/Pauloengcomp/jrxml-designer.git" },
   "engines": { "vscode": "^1.85.0" },
   "categories": ["Other"],
   "main": "./extension.js",
